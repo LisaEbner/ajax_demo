@@ -1,9 +1,17 @@
 var topics = [
+    "Singapore",
+    "Paris",
+    "Hong Kong",
+    "Tokyo",
     "Seattle",
     "Portland",
     "San Francisco",
     "Los Angeles",
-    "Trona, CA"
+    "New York",
+    "Tel Aviv",
+    "Copenhagen",
+    "Seoul",
+    "Osaka",
 ];
 
 
@@ -83,4 +91,3 @@ $(document).on("click", ".gif", function () {
 });
 
 renderButtons();
-
