@@ -1,67 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GIFTastic Cities</title>
 
-    <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/style/style.css">
+  <meta charset="UTF-8">
+  <title>Train Schedule w. Moment JS</title>
+
 </head>
 
-<body class="bg-secondary">
-    <div class="container-fluid bg-dark">
+<body>
 
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-                <nav class="navbar navbar-light bg-dark">
-                        <span class="navbar-brand mb-0 h1">GIFTastic Cities</span>
-                      </nav>
-                  </div>
-                </div>
-              </nav>
+  <!-- jQuery -->
+  <script src="/__/firebase/6.6.1/firebase-app.js"></script>
 
+  <script src="https://code.jquery.com/jquery.js"></script>
 
+  <!-- Link to Moment.js should go here -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <span id="buttonBuild"></span>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    Portland  <form class="m-3 form-inline" id="searchInputForm">
-                        <input class="form-control" type="text" placeholder="Search GIFS" id="userInput"></input>
-                        <input type="submit" id="submitUserInput" class="btn btn-info"></input>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <span id="build"></span>
-            </div>
-        </div>
-        <!-- BOOTSTRAP JAVASCRIPT -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <!-- JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <!-- MY JAVASCRIPT -->
-        <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+  <!-- Script -->
+  <script>
+    var randomDate = "02/23/1999";
+    var randomFormat = "MM/DD/YYYY";
+    var convertedDate = moment(randomDate, randomFormat);
+
+    // Using scripts from moment.js write code below to complete each of the following.
+    // Console.log to confirm the code changes you made worked.
+
+    // 1 ...to convert the randomDate into three other date formats
+    console.log(moment(convertedDate).format("MM/DD/YY"));
+    console.log(moment(convertedDate).format("MMM Do, YYYY hh:mm:ss"));
+    console.log(moment(convertedDate).format("X"));
+    console.log("----------------------------------------");
+
+    // 2 ...to determine the time in years, months, days between today and the randomDate
+    console.log(moment(convertedDate).toNow());
+    console.log(moment(convertedDate).diff(moment(), "years"));
+    console.log(moment(convertedDate).diff(moment(), "months"));
+    console.log(moment(convertedDate).diff(moment(), "days"));
+    console.log("----------------------------------------");
+
+    // 3 ...to determine the number of days between the randomDate and 02/14/2001
+    var newDate = moment("02/14/2001", randomFormat);
+    console.log(moment(convertedDate).diff(moment(newDate), "days"));
+
+    // 4 ...to convert the randomDate to unix time (be sure to look up what unix time even is!!!)
+    console.log(moment(convertedDate).format("X"));
+    console.log("----------------------------------------");
+
+    // 5 ...to determine what day of the week and what week of the year this randomDate falls on.
+    console.log(moment(convertedDate).format("DDD"));
+    console.log(moment(convertedDate).format("dddd"));
+  </script>
 
 </body>
 
