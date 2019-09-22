@@ -9,7 +9,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
   <!-- Style.css -->
   
@@ -37,8 +37,8 @@
   <div class="container">
 
     <!-- Jumbotron -->
-    <div class="jumbotron" style="background-color: black; color: white">
-      <h1 class="text-center">Train Schedule</h1>
+    <div class="jumbotron" style="background-color: red; color: white">
+      <h3 class="text-center">Train Schedule</h1>
       
     </div>
 
@@ -46,7 +46,7 @@
 
       <div class="col-md-12">
 
-        <!-- Current Trains-->
+        <!-- Arrivals-->
         <div class="card mb-4">
           <div class="card-header">Current Trains</div>
           <div class="card-body">
@@ -70,30 +70,30 @@
 
     <div class="row">
       <div class="col-md-12">
-        <!-- Add Employee  -->
+        <!-- Add a Train  -->
         <div class="card mb-4">
-          <div class="card-header">Add Employee</div>
+          <div class="card-header">Add a Train</div>
           <div class="card-body">
 
             <!-- Entry Form -->
             <form>
               <div class="form-group">
-                <label for="employee-name-input">Employee Name</label>
-                <input class="form-control" id="employee-name-input" placeholder="Jane Doe" type="text">
+                <label for="train-name-input">Train Name</label>
+                <input class="form-control" id="train-name-input" placeholder="Nob Hill #17" type="text">
               </div>
               <div class="form-group">
-                <label for="role-input">Role</label>
-                <input class="form-control" id="role-input" placeholder="CEO" type="text">
+                <label for="destination-input">Destination</label>
+                <input class="form-control" id="role-input" placeholder="NW 23rd Ave." type="text">
               </div>
               <div class="form-group">
-                <label for="start-input">Start Date (MM/DD/YYYY)</label>
+                <label for="start-input">Departure Date (MM/DD/YYYY)</label>
                 <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
               </div>
               <div class="form-group">
-                <label for="rate-input">Monthly Rate</label>
+                <label for="rate-input">Frequency</label>
                 <input class="form-control" id="rate-input" placeholder="200000" type="text">
               </div>
-              <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+              <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
             </form>
 
           </div>
