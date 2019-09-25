@@ -1,6 +1,3 @@
-// Steps to complete:
-
-
 // 1. Initialize Firebase
 var config = {
     apiKey: "AIzaSyBXDFUojNWtYuhG6Kj8wn5IiIpCxCY7KK4",
@@ -35,6 +32,7 @@ $(document).on("click","#add-train-btn", function(event) {
     start: start,
     rate: rate
   };
+//moment().startOf('hour').fromNow();      
 
   // Uploads employee data to the database
   database.ref().push(newTrain);
@@ -76,14 +74,9 @@ console.log(timeNow, "timeNow")
   console.log(start, "Start");
   console.log(rate);
 
-  // Prettify the employee start
+  // Prettify the train arrival
 
-  // Calculate the months worked using hardcore math
-  // To calculate the months worked
-
-  console.log(trainMonths);
-
-  // Calculate the total billed rate
+  console.log(trainMinutes);
 
   // Create the new row
   var newRow = $("<tr>").append(
@@ -95,12 +88,23 @@ console.log(timeNow, "timeNow")
 
   // Append the new row to the table
   $("#employee-table > tbody").append(newRow);
+     //updates html on child_added
+     database.ref().on("child_added", function (snapshot) {
+      var minutes;
+      $(".name").append("<hr><div>" + snapshot.val().name + "</div>");
+      $(".dest").append("<hr><div>" + snapshot.val().dest + "</div>");
+      $(".frequency").append("<hr><div>" + snapshot.val().frequency + "</div>");
+      $(".start").append("<hr><div>" + moment(snapshot.val().start, "X").format("lll") + "</div>");
+      var diff = moment().diff(moment(snapshot.val().start, "X").format("lll"), "minutes");
+      if (diff >= 0) {
+          var remainder = diff % snapshot.val().frequency;
+          minutes = snapshot.val().frequency - remainder;
+          console.log(minutes);
+          $(".next").append("<hr><div>" + moment().add(minutes, "minutes").format("lll") + "</div>");
+          $(".minutes").append("<hr><div>" + minutes + "</div>");
+      } else {
+          $(".next").append("<hr><div>" + moment(snapshot.val().start, "X").format("lll") + "</div>");
+          $(".minutes").append("<hr><div>" + moment(snapshot.val().start, "X").diff(moment(), "minutes") + "</div>");
+      }      
+  })
 });
-
-// Example Time Math
-// -----------------------------------------------------------------------------
-// Assume Employee start date of January 1, 2015
-// Assume current date is March 1, 2016
-
-// We know that this is 15 months.
-// Now we will create code in moment.js to confirm that any attempt we use meets this test case
